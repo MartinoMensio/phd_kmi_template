@@ -1,0 +1,77 @@
+\documentclass[12pt]{scrreprt}
+
+% template inspired from https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% for layout
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy} % adding header to pages
+\newsavebox{\largestimage} % for the title_page
+
+% for figures
+\usepackage{caption}
+\usepackage{subcaption}
+
+% for references
+% \usepackage{biblatex}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\graphicspath{ {images/} }
+
+% for \thetitle \theauthor \thedate
+\usepackage{titling}
+
+% document properties
+\title{Thesis Title}
+\subtitle{Subtitle}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\input{title_page}
+
+\chapter*{Abstract}
+Abstract goes here
+
+\chapter*{Dedication}
+To mum and dad
+
+\chapter*{Declaration}
+I declare that..
+
+\chapter*{Acknowledgements}
+I want to thank...
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introduction}
+\input{chapters/01_introduction}
+
+\chapter{Chapter Two Title}
+\input{chapters/02_chapter}
+
+\chapter{Chapter Three Title}
+\input{chapters/03_chapter}
+
+\chapter{Chapter Four Title}
+\input{chapters/04_chapter}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+
+\printbibliography[heading=bibintoc]
+% \bibliography{bibliography}
+
+\appendix
+\chapter{Appendix Title}
+\input{chapters/appendix}
+
+\end{document}
